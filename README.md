@@ -1,13 +1,10 @@
-# ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# <h1 align="center">**Mildew Detector**</h1>
 
-## Template Instructions
+## Introduction
 
-Welcome,
+The Mildew Detector dashboard application utilizes Machine Learning technology to allow users to upload images of cherry leaves for analysis. It assesses whether the cherry leaves is healthy or afflicted with powdery mildew.
 
-This is the Code Institute student template for the bring your own data project option in Predictive Analytics. We have preinstalled all of the tools you need to get started. It's perfectly okay to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
-
-You can safely delete the Template Instructions section of this README.md file and modify the remaining paragraphs for your own project. Please do read the Template Instructions at least once, though! It contains some important information about the IDE and the extensions we use.
-
+![Home Screen]
 ## How to use this repo
 
 1. Use this template to create your GitHub project repo
