@@ -70,3 +70,20 @@ def leaves_visualizer_page_body():
                         label_to_display=label_to_display,
                         nrows=8, ncols=3, figsize=(10,25))
         st.write("---")
+
+
+def image_montage(dir_path, label_to_display, nrows, ncols, figsize=(15,10)):
+    """ Function to create and display the image montage section """
+    sns.set_style("dark")
+    labels = os.listdir(dir_path)
+
+    # subset the class you are interested to display
+    if label_to_display in labels:
+
+        # checks if your montage space is greater than subset size
+        # how many images in that folder
+        images_list = os.listdir(dir_path+'/'+ label_to_display)
+    
+    else:
+        print("The label you selected doesn't exist.")
+        print(f"The existing options are: {labels}")
