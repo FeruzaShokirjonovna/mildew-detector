@@ -41,3 +41,32 @@ def leaves_visualizer_page_body():
         st.image(avg_var_healty, caption='Healty leaves - Avegare and Variability')
         st.image(avg_var_powdery_mildew, caption='Powdery Mildew infected leaves - Average and Variability')
         st.write("---")
+    
+    # Show the difference between average and variability images
+    if st.checkbox("Differences between average healthy and average infected leaves"):
+        diff_between_avgs = plt.imread(f"outputs/{version}/avg_diff.png")
+
+        st.success(
+        f"* We can appreciate the same pattern here, where the healthy leaves have a "
+        f"surface more clear, green, and the infected ones have more white color in "
+        f"the surface. Difficult to appreciate when we cannot compare both different"
+        f" kind of leaves."
+        )
+
+        st.image(diff_between_avgs, caption='Difference between average images')
+    # Show the image montage
+    if st.checkbox("Image Montage"): 
+        st.success(
+            f"* The montage helps to visualize the difference between a healthy"
+            f" leaf and an infected one. The infected one has white, powdery "
+            f"spots or patches on the top side of leaves"
+        )
+        st.info("To refresh the montage, click on 'Create Montage' button")
+        my_data_dir = 'inputs/cherry_dataset/cherry-leaves'
+        labels = os.listdir(my_data_dir+ '/validation')
+        label_to_display = st.selectbox(label="Select label", options=labels, index=0)
+        if st.button("Create Montage"):      
+            image_montage(dir_path= my_data_dir + '/validation',
+                        label_to_display=label_to_display,
+                        nrows=8, ncols=3, figsize=(10,25))
+        st.write("---")
