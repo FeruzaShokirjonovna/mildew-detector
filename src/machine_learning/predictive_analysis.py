@@ -38,3 +38,24 @@ def plot_predictions_probabilities(pred_proba, pred_class):
             width=700, height=300
             )
     st.plotly_chart(fig)
+
+def load_model_and_predict(my_image, version):
+    """
+    Load and perform ML prediction over live images
+    """
+
+    model = load_model(f"outputs/{version}/powdery_mildew_detector_model.h5")
+
+    pred_proba = model.predict(my_image)[0,0]
+
+    target_map = {v: k for k, v in {'Healthy': 0, 'Powdery mildew infected': 1}.items()}
+    pred_class =  target_map[pred_proba > 0.5]  
+    if pred_class == target_map[0]: pred_proba = 1 - pred_proba
+
+
+    st.write(
+        f"The predictive analysis indicates the sample leaf is "
+        f"**{pred_class.lower()}**.")
+
+    
+    return pred_proba, pred_class
