@@ -27,5 +27,35 @@ def show_warning_message():
 
 
 def summary_page_body():
-    """ Funtion to show the summary page """
-    st.write("### Quick Project Summary")
+    """ Function to show the summary page """
+
+    check_warning_message_state()
+    show_warning_message()
+
+    st.write("### Quick Project Summary"
+    f"**General Information**\n"
+    f"* The Project aims to assist farmers and agricultural professionals in identifying and managing plant diseases efficiently in apple trees.\n"
+    f"* The system will focus on classifying apple plant images into two categories: Healthy and Powdery Mildew Affected.\n"
+    f"* Powdery mildew is a fungal disease that affects a wide range of plants. Powdery mildew diseases are caused by many different species of fungi in the order Erysiphales."
+    f"It is important to be aware of powdery mildew and its management as the resulting disease can significantly reduce important crop yields, [Powdery image](https://media.istockphoto.com/photos/grapevine-diseases-downy-mildew-is-a-fungal-disease-that-affects-a-picture-id1161364148?k=6&m=1161364148&s=612x612&w=0&h=BzE8nsZHyGD3y7r1wvKIYDrvqLQcJdk_efFCUNB3134=)\n"
+    f"* Visual criteria are used to detect plant disease.\n"
+    f"\n"
+    f"**Project Dataset**\n"
+    f"* The available dataset contains 4208 thousand images taken from "
+    f"different leaves, half infected and half healthy."
+    )
+
+    # Link to the README file
+    st.write(
+        f"* For additional information, please visit and **read** the "
+        f"[Project README file](https://github.com/FeruzaShokirjonovna/mildew-detector/blob/main/README.md).")
+    
+    # Project business requirements
+    st.success(
+        f"The project has 2 business requirements:\n"
+        f"* 1 - The client is interested in conducting a study to "
+        f"differentiate a cherry leaf"
+        f" that is healthy from one that contains powdery mildew.\n"
+        f"* 2 - The client is interested to predict if a cherry leaf is healthy"
+        f" or contains powdery"
+        f" mildew ")
