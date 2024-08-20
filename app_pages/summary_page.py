@@ -1,5 +1,6 @@
 import streamlit as st
 import matplotlib.pyplot as plt
+import time
 
 # Function to check if the warning message has been shown
 def check_warning_message_state():
