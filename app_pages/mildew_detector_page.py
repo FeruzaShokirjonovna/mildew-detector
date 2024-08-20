@@ -21,7 +21,7 @@ def mildew_detector_body():
     # if the don't have any other image to do it, so the link
     # to the dataset is shown to them.
     st.write(
-        f"* Download a set of haelthy and powdery mildew infected leaves for live "
+        f"* Download a set of healthy and powdery mildew infected leaves for live "
         f"prediction [here](https://www.kaggle.com/codeinstitute/cherry-leaves)"
         )
 
