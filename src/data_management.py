@@ -1,8 +1,5 @@
 # Code adapted from Code Institute's Malaria walkthrough project
 
-import numpy as np
-import pandas as pd
-import os
 import base64
 from datetime import datetime
 import joblib
@@ -14,10 +11,11 @@ def download_dataframe_as_csv(df):
     csv = df.to_csv().encode()
     b64 = base64.b64encode(csv).decode()
     href = (
-        f'<a href="data:file/csv;base64,{b64}" download="Report {datetime_now}.csv" '
+        f'<a href="data:file/csv;base64,{b64}" download="Report {datetime_now}.csv" '  # noqa
         f'target="_blank">Download Report</a>'
     )
     return href
+
 
 
 def load_pkl_file(file_path):
