@@ -35,16 +35,17 @@ def summary_page_body():
 
     st.write("### Quick Project Summary"
     f"\n"
-    f"* The Project aims to assist farmers and agricultural professionals in identifying and managing plant diseases efficiently in apple trees.\n"
-    f"* The system will focus on classifying apple plant images into two categories: Healthy and Powdery Mildew Affected.\n"
-    f"* Powdery mildew is a fungal disease that affects a wide range of plants. Powdery mildew diseases are caused by many different species of fungi in the order Erysiphales.\n"
-    f"* It is important to be aware of powdery mildew and its management as the resulting disease can significantly reduce important crop yields, [Powdery image](https://media.istockphoto.com/photos/grapevine-diseases-downy-mildew-is-a-fungal-disease-that-affects-a-picture-id1161364148?k=6&m=1161364148&s=612x612&w=0&h=BzE8nsZHyGD3y7r1wvKIYDrvqLQcJdk_efFCUNB3134=)\n"
     f"* The fictitious company Farmy & Foods has large cherry plantations "
         "and have lately encountered powdery mildew on their cherry trees. "
         "Currently, the process to identify the affected trees is manual and "
         "quite time-consuming. The company wants to make use of an ML model "
         "to predict whether or not a tree is affected on images of leaves "
         "their staff supplies.\n"
+    f"* The Project aims to assist farmers and agricultural professionals in identifying and managing plant diseases efficiently in apple trees.\n"
+    f"* The system will focus on classifying apple plant images into two categories: Healthy and Powdery Mildew Affected.\n"
+    f"* Powdery mildew is a fungal disease that affects a wide range of plants. Powdery mildew diseases are caused by many different species of fungi in the order Erysiphales.\n"
+    f"* It is important to be aware of powdery mildew and its management as the resulting disease can significantly reduce important crop yields, [Powdery image](https://media.istockphoto.com/photos/grapevine-diseases-downy-mildew-is-a-fungal-disease-that-affects-a-picture-id1161364148?k=6&m=1161364148&s=612x612&w=0&h=BzE8nsZHyGD3y7r1wvKIYDrvqLQcJdk_efFCUNB3134=)\n"
+    
     f"\n"
     f"**Project Dataset**\n"
     f"* The available dataset contains 4208 thousand images taken from "
@@ -59,9 +60,9 @@ def summary_page_body():
     # Project business requirements
     st.success(
         f"The project has 2 business requirements:\n"
-        f"* 1 - The client is interested in conducting a study to "
+        f"* The client is interested in conducting a study to "
         f"differentiate a cherry leaf"
         f" that is healthy from one that contains powdery mildew.\n"
-        f"* 2 - The client is interested to predict if a cherry leaf is healthy"
+        f"* The client is interested to predict if a cherry leaf is healthy"
         f" or contains powdery"
         f" mildew ")
