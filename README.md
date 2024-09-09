@@ -45,12 +45,12 @@ The Mildew Detector dashboard application utilizes Machine Learning technology t
 
 
 ## Hypothesis and how to validate?
-1. The identification of apple leaves affected by powdery mildew from healthy leaves can be achieved through visual examination of their distinct appearances.
+1. The identification of cherry leaves affected by powdery mildew from healthy leaves can be achieved through visual examination of their distinct appearances.
    - This can be confirmed through the creation of an average image study and image montage, allowing for a comparative analysis of the appearance differences between healthy leaves and those affected by powdery mildew.
-2. The determination of apple leaves as healthy or afflicted with powdery mildew can be accomplished with a confidence level of 97% accuracy. 
+2. The determination of cherry leaves as healthy or afflicted with powdery mildew can be accomplished with a confidence level of 97% accuracy. 
    - This assertion can be substantiated by assessing the model's performance on the test dataset, aiming for a minimum accuracy rate of 97%.
-3. The model's prediction accuracy may be compromised if the images of apple leaves contain backgrounds different from the beige background of the Kaggle dataset. 
-   - Confirm this limitation, the model should be tested with new pictures of apple leaves featuring backgrounds distinct from those in the dataset images.
+3. The model's prediction accuracy may be compromised if the images of cherry leaves contain backgrounds different from the beige background of the Kaggle dataset. 
+   - Confirm this limitation, the model should be tested with new pictures of cherry leaves featuring backgrounds distinct from those in the dataset images.
 4. It is advisable to use images in RGB mode for improved prediction accuracy. Nevertheless, if images are not already in RGB mode, the trained model will automatically convert them to RGB mode for processing.
 The outcome of the validation can be found on the live dashboard on the page "Project Hypotheses".
 
@@ -58,7 +58,7 @@ The outcome of the validation can be found on the live dashboard on the page "Pr
 ## The rationale to map the business requirements to the Data Visualizations and ML tasks
 - Business Requirement 1: Data Visualization
 
-  - The dashboard will showcase the 'mean' and 'standard deviation' images for both healthy and powdery mildew-infected apple leaves.
+  - The dashboard will showcase the 'mean' and 'standard deviation' images for both healthy and powdery mildew-infected cherry leaves.
   - Additionally, it will display the contrast between an average healthy leaf and an average leaf infected with powdery mildew.
   - Furthermore, an image montage featuring healthy leaves, leaves affected by powdery mildew will be presented for comparison.
 
@@ -71,11 +71,28 @@ The outcome of the validation can be found on the live dashboard on the page "Pr
 - Business Requirement 3: Report
   - A downloadable report containing the predicted status of all uploaded images is available for users.
 
-
-
 ## ML Business Case
-* In the previous bullet, you potentially visualized an ML task to answer a business requirement. You should frame the business case using the method we covered in the course 
+- To create a machine learning model for cherry leaf classification, particularly distinguishing between healthy leaves and those infected with powdery mildew, typically the following steps are followed:
 
+1. Data Collection: Gather a dataset containing images of leaves categorized as healthy and powdery mildew-infected. Ensure each category is well-represented in the dataset.
+
+2. Data Preprocessing: Preprocess the images to ensure uniformity in size, color space, and quality. This step may involve resizing, normalization, and augmentation techniques to enhance the dataset's diversity.
+
+3. Feature Extraction: Use techniques like convolutional neural networks (CNNs) to extract meaningful features from the images. CNNs are particularly effective for image classification tasks due to their ability to capture spatial hierarchies.
+
+4. Model Selection: Choose an appropriate machine learning model architecture for classification. Common choices for image classification tasks include CNN-based architectures.
+
+5. Model Training: Split the dataset into training and validation sets. Train the selected model on the training set while validating its performance on the validation set. Fine-tune hyperparameters to optimize the model's performance.
+
+6. Model Evaluation: Evaluate the trained model's performance using appropriate evaluation metrics on the validation set.
+
+7. Model Testing: Once satisfied with the model's performance, test it on a separate test dataset to assess its generalization ability. This step ensures that the model can accurately classify unseen data.
+
+8. Deployment: Deploy the trained model into production, making it available for inference on new leaf images. Integrate the model into an application or system where users can upload leaf images and receive predictions on their health status.
+
+9. Monitoring and Maintenance: Continuously monitor the model's performance in production and update it periodically with new data to ensure its effectiveness over time.
+
+- The training data is a [Kaggle dataset](https://www.kaggle.com/codeinstitute/cherry-leaves) with over 4k images of healthy and affected cherry leaves. 
 
 ## Dashboard Design
 * List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other item that your dashboard library supports.
