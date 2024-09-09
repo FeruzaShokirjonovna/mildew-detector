@@ -9,6 +9,7 @@ from app_pages.mildew_detector_page import mildew_detector_body
 from app_pages.project_hypothesis_page import project_hypothesis_page_body
 from app_pages.ml_performance_page import ml_performance_body
 
+
 # Create an instance of the app
 app = MultiPage(app_name= "Powdery Mildew Detector")
 

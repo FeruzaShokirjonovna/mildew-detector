@@ -49,4 +49,9 @@ def ml_performance_body():
                  index=['Loss', 'Accuracy'],
                  columns=['Performance']))
     
-    
+    st.info(
+        "We can see that the accuracy is at 99.3%, therefore fitting the "
+        "expectation of the client of a minimum accuracy of 97%.\n"
+        "Therefore we can say that the ML model created has successfully "
+        "answered the business requirement set by the client."
+    )
