@@ -41,7 +41,7 @@ The Mildew Detector dashboard application utilizes Machine Learning technology t
 
     * 1 - The client is interested in conducting a study to visually differentiate a cherry leaf that is healthy and that contains powdery mildew.
     * 2 - The client is interested to predict if a cherry leaf is healthy or contains powdery mildew.
-    * 3 - The client would like to receive some treatments based on the type of plant diseases.
+    * 3 - The client would like to receive some treatment suggestions based on the plant disease.
 
 
 ## Hypothesis and how to validate?
@@ -94,9 +94,53 @@ The outcome of the validation can be found on the live dashboard on the page "Pr
 
 - The training data is a [Kaggle dataset](https://www.kaggle.com/codeinstitute/cherry-leaves) with over 4k images of healthy and affected cherry leaves. 
 
+## User Stories
+
+- As a client I require an intuitive dashboard for easy navigation, allowing me to effortlessly access and comprehend data, models, and outcomes.
+- As a client I need the capability to observe average and variable images of both healthy cherry leaves and those infected with powdery mildew. This feature will enable me to visually distinguish between the two categories.
+- As a client I seek the ability to view a visual montage comprising images of healthy cherry leaves and those infected with powdery mildew. This feature will facilitate a clearer differentiation between the three classifications.
+- As a client I desire the functionality to upload images of cherry leaves and receive classification predictions with an accuracy exceeding 97%. This will allow for swift assessment of cherry tree health based on the provided predictions.
+- As a client I require treatment suggestions based on identified plant diseases to effectively address any issues affecting my plants' health.
+- As a client I require the facility to download a report containing the provided predictions, ensuring that I have a record of the outcomes for future reference.
+
+
 ## Dashboard Design
-* List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other item that your dashboard library supports.
-* Later, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project you were confident you would use a given plot to display an insight but subsequently you used another plot type).
+### Page 1: Quick Project Summary
+
+- Provide an overview of powdery mildew, accompanied by sample images for illustration.
+- Outline the specifics of the dataset utilized in the project.
+- Define the business requirements.
+- Include a hyperlink to access this Readme file.
+
+### Page 2: Plant leaves Visualizer
+
+- This page is designed to meet Business Requirement 1 by showcasing the following:
+  - Illustrating the disparity between the average and variability image.
+  - Displaying the contrast between average healthy leaves and leaves infected with powdery mildew.
+  - Presenting an image montage featuring for healthy leaves and leaves infected with powdery mildew.
+
+### Page 3: Plant Diseases Detector
+
+- This page is designed to meet Business Requirements 2 and 3, offering the following features:
+  - Prediction of whether a leaf is infected with powdery mildew.
+  - Provision of a link to download a set of images displaying healthy leaves and leaves infected with powdery mildew for live prediction.
+  - User Interface featuring a file uploader widget for multiple leaf image uploads. It displays each uploaded image along with a prediction statement indicating if the leaf is infected with powdery mildew, along with the associated probability.
+  - In addition to uploading images directly from their device, users can also copy and paste image URL(s) from external sources for live prediction.
+  - Generation of a report containing image names and prediction results.
+  - Offering treatment recommendations tailored to plant disease.
+  - Download button provided to download the generated report.
+
+### Page 4: Project Hypothesis and Validation
+
+- Detail each [hypotheses](#hypotheses-and-how-to-validate), how it was validated and the conclusion.
+
+### Page 5: Machine Learning Performance Metrics
+
+- Providing comprehensive details on the model performance, including:
+  - Label frequencies for the training, validation, and test sets.
+  - Model history depicting accuracy and losses during training.
+  - Evaluation results of the model's performance.
+  - Offering metrics that demonstrate the performance of the model.
 
 
 
