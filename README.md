@@ -56,7 +56,21 @@ The outcome of the validation can be found on the live dashboard on the page "Pr
 
 
 ## The rationale to map the business requirements to the Data Visualizations and ML tasks
-* List your business requirements and a rationale to map them to the Data Visualizations and ML tasks
+- Business Requirement 1: Data Visualization
+
+  - The dashboard will showcase the 'mean' and 'standard deviation' images for both healthy and powdery mildew-infected apple leaves.
+  - Additionally, it will display the contrast between an average healthy leaf and an average leaf infected with powdery mildew.
+  - Furthermore, an image montage featuring healthy leaves, leaves affected by powdery mildew will be presented for comparison.
+
+- Business Requirement 2: Classification
+
+  - Create and fit a machine learning model to predict if a given leaf is healthy or infected with powdery mildew. This will be a classification task with three classes and will require to set the image shape.
+  - The model provides treatment recommendations to users based on the type of plant disease identified.
+  - The predictions should have a 97% accuracy level.
+  
+- Business Requirement 3: Report
+  - A downloadable report containing the predicted status of all uploaded images is available for users.
+
 
 
 ## ML Business Case
