@@ -142,7 +142,37 @@ The outcome of the validation can be found on the live dashboard on the page "Pr
   - Evaluation results of the model's performance.
   - Offering metrics that demonstrate the performance of the model.
 
+## Methodology
 
+### CRISP-DM
+
+CRISP-DM methodology was employed for the data mining project, consisting of six stages with the following interrelated relationship:
+
+1. **Business Understanding**: In this initial phase, the focus was on understanding the business objectives, requirements, and priorities. Key stakeholders were engaged to define the scope of the project and establish clear goals for data mining efforts.
+
+2. **Data Understanding**: Once the business goals were clarified, attention turned to understanding the available data sources. This involved identifying relevant datasets, assessing their quality, and gaining insights into the nature of the data.
+
+3. **Data Preparation**: With a comprehensive understanding of the data at hand, efforts were directed towards preparing the data for analysis. This stage involved data cleaning, integration, transformation, and formatting to ensure that it was suitable for modeling.
+
+4. **Modeling**: The modeling phase involved selecting appropriate techniques and algorithms to build predictive or descriptive models based on the prepared data. Various modeling techniques were explored, including machine learning algorithms, and data visualization methods.
+
+5. **Evaluation**: Once the models were developed, they were evaluated to assess their performance and effectiveness in meeting the business objectives. This involved testing the models against validation datasets and using metrics to measure their accuracy, precision, recall, and other relevant criteria.
+
+6. **Deployment**: The final stage of the CRISP-DM process involved deploying the models into production environments. This required integrating the models with existing systems, implementing monitoring mechanisms, and providing support for ongoing maintenance and updates.
+
+Throughout each stage of the process, there was a continuous feedback loop, allowing for adjustments and refinements based on new insights and changing requirements. This iterative approach ensured that the data mining project remained aligned with the business objectives and delivered actionable results.
+
+![CRISP_DM](static/images/CRISP_DM_diagram.png)
+
+### Agile
+
+For the project, an agile approach was adopted, facilitated by GitHub projects with the assistance of Milestones and Issues. Each Issue comprehensively outlined the relevant tasks to be completed.
+
+The project board can be viewed [here](https://github.com/users/FeruzaShokirjonovna/projects/7/views/1)
+
+### Image preparation
+
+The original images [Kaggle](https://www.kaggle.com/datasets/codeinstitute/cherry-leaves) possess a large size and resolution. To address this, we utilize the PIL package to resize and adjust the images, reducing their dimensions to (50, 50, 3).
 
 ## Unfixed Bugs
 * You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
