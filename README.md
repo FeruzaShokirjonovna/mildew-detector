@@ -125,9 +125,8 @@ The outcome of the validation can be found on the live dashboard on the page "Pr
   - Prediction of whether a leaf is infected with powdery mildew.
   - Provision of a link to download a set of images displaying healthy leaves and leaves infected with powdery mildew for live prediction.
   - User Interface featuring a file uploader widget for multiple leaf image uploads. It displays each uploaded image along with a prediction statement indicating if the leaf is infected with powdery mildew, along with the associated probability.
-  - In addition to uploading images directly from their device, users can also copy and paste image URL(s) from external sources for live prediction.
   - Generation of a report containing image names and prediction results.
-  - Offering treatment recommendations tailored to plant disease.
+  - Offering treatment recommendations and additional recourses tailored to plant disease.
   - Download button provided to download the generated report.
 
 ### Page 4: Project Hypothesis and Validation
@@ -173,6 +172,172 @@ The project board can be viewed [here](https://github.com/users/FeruzaShokirjono
 ### Image preparation
 
 The original images [Kaggle](https://www.kaggle.com/datasets/codeinstitute/cherry-leaves) possess a large size and resolution. To address this, we utilize the PIL package to resize and adjust the images, reducing their dimensions to (50, 50, 3).
+
+## Rationale for the Model
+- The rationale behind selecting a specific model for a machine learning task is typically based on several factors:
+
+  - A good model excels in generating accurate predictions by effectively generalizing from the training data, thus enabling precise predictions on unseen data. Additionally, it maintains simplicity, avoiding unnecessary complexity in neural network architecture or computational power.
+
+  - However, when a model undergoes excessive training or becomes overly complex, it risks learning noise or irrelevant information from the dataset. This phenomenon, known as overfitting, results in the model fitting too closely to the training set, leading to poor generalization on new data. Overfitting can be identified by assessing the model's performance on validation and test datasets.
+
+  - Conversely, underfitting occurs when the model fails to discern meaningful relationships between input and output data. Detection of underfitting involves evaluating the model's performance on the training dataset, typically indicated by low accuracy. This deficiency also translates to low accuracy across validation and test datasets.
+
+### Model Creation
+
+- For this image classification project, a Convolutional Neural Network (CNN) is implemented using TensorFlow. The task involves classifying images into one of three categories: healthy, powdery mildew-infected, or rust-infected. Here's a breakdown of the model:
+
+  - The model is initiated using the Sequential() function, indicating a sequential layer-by-layer architecture.
+
+  - Four convolutional layers (Conv2D) are added successively to extract features from input images. Each convolutional layer has a 3x3 filter size and employs the Rectified Linear Unit (ReLU) activation function to introduce non-linearity. The first layer specifies an input shape of (IMG_HEIGHT, IMG_WIDTH, IMG_CHANNELS).
+
+  - After each convolutional layer, a max-pooling layer (MaxPooling2D) with a 2x2 window size is added to downsample the feature maps, retaining the most salient features.
+
+  - Following the convolutional and max-pooling layers, a Flatten() layer is included to flatten the feature maps into a one-dimensional vector, preparing them for input to the dense layers.
+
+  - Two fully connected (Dense) layers are added with 128 units each, employing ReLU activation functions. These layers serve as intermediate layers for feature transformation and extraction.
+
+  - The final dense layer consists of 2 units, representing the number of classes (healthy, powdery_mildew) in the classification task. 
+
+The model architecture was iteratively refined through trial and error, aiming to address issues such as underfitting or overfitting observed in previous versions. The chosen model version, referred to as version 1 in the evaluation phase, demonstrated a balanced fit.
+
+BDetailed insights into the testing phase can be found in the [testing section](#testing).
+
+![ML_Model](static/images/ML_model.png)
+
+## Project Features
+
+<details>
+
+<summary>Navigation</summary>
+
+The navigation bar remains visible across all pages of the dashboard, offering convenient access to various sections.
+
+![Menu](static/images/navigation.png)
+
+</details>
+
+<details>
+
+<summary>Page 1: Quick Project Summary</summary>
+
+The Quick Project Summary page furnishes users with details regarding powdery mildew, a project summary, dataset information, and the business requirements. Additionally, a hyperlink to access this ReadMe file is provided.
+
+![Page_1](static/images/project_summary.png)
+
+</details>
+
+<details>
+
+<summary>Page 2: Plant image Visualizer</summary>
+
+The leaf visualizer page presents users with the outcomes of the study, aiding in visually distinguishing between a healthy cherry leaf and one affected by powdery mildew. It was established that healthy and infected leaves exhibit discernible differences in appearance.
+
+On this page, users have the options to:
+
+  - View the disparity between average and variability images.
+  - Compare the distinctions between average infected and average uninfected leaves.
+  - Access an image montage showcasing healthy or infected leaves.
+
+![Page_2](static/images/leaves_visualiser.png)
+![](static/images/difference_between_average_images.png)
+![](static/images/image_montage.png)
+</details>
+
+<details>
+
+<summary>Page 3: Plant Disease Detector</summary>
+
+On the detector page, users have the capability to upload images of cherry leaves to determine their health status, whether they are healthy or infected with powdery mildew. Following the upload, each image is accompanied by a prediction statement and a graphical representation depicting the probability of the prediction's accuracy. Moreover, treatment suggestions and additional recources tailored to the respective plant diseases are provided for user reference. Finally, a downloadable report is available, offering comprehensive details including the image name, probability accuracy, result in a .csv format.
+
+![Page_3](static/images/powdery_mildew_detector.png)
+![](static/images/mildew_detector_result.png)
+
+</details>
+
+<details>
+
+<summary>Page 4: Project Hypothesis and Validation</summary>
+
+The hypothesis page furnishes users with comprehensive details regarding the project hypotheses and their respective outcomes.
+
+![Page_4](static/images/project_hypothesis_validation.png)
+
+</details>
+
+<details>
+
+<summary>Page 5: Machine Learning Performance</summary>
+
+The performance metrics page offers users insights into various aspects of the machine learning model's performance, including:
+
+1. Dataset distribution: Visual representation of the distribution of the dataset used for training, validation, and testing.
+
+2. Performance plots: Graphical representations illustrating the performance metrics during model training and evaluation.
+
+3.  Performance on the test dataset: Summary of the model's performance metrics specifically on the test dataset.
+
+![Page_5](static/images/ml_performance_label_frequencies.png)
+![](static/images/ml_performance_model_history.png)
+
+</details>
+
+## Project Outcomes
+
+### Business Requirement 1: Data Visualization
+
+The visualization study can be accessed via the [Plant image Visualizer page](https://mildew-detector-app-84798b6ec62b.herokuapp.com/) on the dashboard. This study showcases the mean and variability images alongside an image montage featuring both healthy and infected leaves. The study concludes that distinguishing between healthy and infected leaves is possible based on appearance.
+
+### Business Requirement 2: Classification
+
+- The classification tool is accessible on the [Plant Disease Detector page](https://mildew-detector-app-84798b6ec62b.herokuapp.com/) of the dashboard. Users can upload images of cherry leaves and receive a classification prediction for each image, accompanied. Notably, the predictions boast an accuracy level exceeding 97%.
+- The prediction is accompanied by suggestions for plant diseases.
+
+### Business Requirement 3: Report
+
+The report is accessible on the [Plant Disease Detector page](https://mildew-detector-app-84798b6ec62b.herokuapp.com/) of the dashboard following the classification of images. Users are presented with a table displaying the image name, probability percentage, corresponding treatment suggestions and result for each uploaded image. Additionally, users can download the report by clicking 'Download Report', saving it as a .csv file.
+
+## Hypothesis Outcomes
+
+### Hypothesis 1
+
+- The hypothesis that cherry leaves with powdery mildew can be differentiated from healthy leaves by their appearance was confirmed through various visual analyses.
+
+![Sample](static/images/healthy_and_infected_leaves.png)
+
+An average image study and image montage were conducted to discern disparities between healthy leaves and those affected by powdery mildew. The image montage vividly illustrated that leaves infected with powdery mildew are distinguishable due to the presence of white deposits on the affected leaves. 
+
+Furthermore, the average and variability images revealed distinctive patterns, particularly within the center of the leaf, relating to color pigmentation. Notably, the variability images showcased a discernible difference wherein the center of healthy leaves appeared black, whereas the center of infected leaves did not exhibit the same characteristic.
+
+In conclusion, the hypothesis was validated, confirming that healthy leaves and infected leaves can indeed be distinguished by their appearance. Leaves affected with powdery mildew exhibit distinctive white marks.
+
+### Hypothesis 2
+
+- Cherry leaves can be accurately classified as healthy or infected with powdery mildew with a remarkable degree of over 97% accuracy.
+
+This assertion was substantiated by evaluating the model's performance on the test dataset.
+
+The model exhibited outstanding accuracy during training, surpassing 97% with both the train and validation datasets. Furthermore, it achieved a remarkable 99% accuracy on the test dataset.
+
+In conclusion, this hypothesis was verified as the model, trained using a Convolutional Neural Network, successfully classified images of cherry leaves as healthy or infected with powdery mildew with an accuracy exceeding 97%.
+
+### Hypothesis 3
+
+- If the image contains a background that differs from the background of the Kaggle dataset, the model may produce inaccurate predictions.
+
+This assertion was confirmed through the uploading of the following images to the dashboard:
+
+![Hypothesis Pictures](static/images/hypothesis_3_picture.jpg)
+
+The results were 2 correct predictions and 3 incorrect predictions as follows:
+
+| Image Numbers | Classification |
+|---------------|----------------|
+| 1             | Infected        |
+| 2             | Healthy        |
+| 3             | Infected        |
+| 4             | Healthy           |
+| 5             | Infected           |
+
 
 ## Unfixed Bugs
 * You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
