@@ -444,20 +444,87 @@ There are no known unfixed bugs.
 ## Deployment
 ### Heroku
 
-* The App live link is: https://YOUR_APP_NAME.herokuapp.com/ 
-* Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
-* The project was deployed to Heroku using the following steps.
+To deploy this app to Heroku from its GitHub repository, follow these steps:
 
-1. Log in to Heroku and create an App
-2. At the Deploy tab, select GitHub as the deployment method.
-3. Select your repository name and click Search. Once it is found, click Connect.
-4. Select the branch you want to deploy, then click Deploy Branch.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click now the button Open App on the top of the page to access your App.
-6. If the slug size is too large then add large files not required for the app to the .slugignore file.
+#### Create a Heroku App:
+
+- Begin by logging in to [Heroku](https://dashboard.heroku.com/apps). If you don't have an account yet, you'll need to create one.
+- Once logged in, click the 'New' button at the top right corner and select 'Create new app' from the drop-down menu.
+- Choose a unique and descriptive name for your app in the 'App name' field.
+- Select the region closest to your location from the 'Choose a region' field.
+- After filling in the details, click on the 'Create app' button.
+
+#### Deploying on Heroku
+
+- Make sure your project includes a requirements.txt file listing all the dependencies required to run the app.
+- Set the stack to Heroku-20 by following these steps:
+  - Navigate to 'Account Settings' from the avatar menu in Heroku.
+  - Under the 'API Key' section, click 'Reveal' to display your API key, then copy it.
+  - In your command line interface, log in to Heroku using 'heroku login -i', and enter your email and copied API key when prompted.
+  - Execute the command 'heroku stack:set heroku-20 -a yourappname', replacing 'yourappname' with the name you gave to your app during its creation.
+- Ensure the runtime.txt file specifies a Python version supported by the [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack.
+- Confirm the presence of a Procfile containing the command 'web: sh setup.sh && streamlit run app.py'.
+- Ensure all your code changes are committed and pushed to GitHub.
+- Back in Heroku, navigate to the 'Deploy' tab, and under the 'Deployment Method' section, select 'GitHub' and confirm your intention to deploy from GitHub. If prompted, enter your GitHub password.
+- Search for your repository under the 'Connect to GitHub' section, and once found, click 'Connect'.
+- To initiate deployment, proceed to the 'Manual Deploy' section, add the 'main' branch to the 'Choose a branch to deploy' field, and click 'Deploy Branch'.
+- Your app is now live on Heroku. Click 'View' to access the deployed site.
+
+### Forking the Repository
+
+To create a copy of the repository, follow these steps:
+
+- Visit the [Plant Disease Classification](https://mildew-detector-app-84798b6ec62b.herokuapp.com/) repository.
+- Click the 'Fork' button located at the top right corner of the page.
+
+### Cloning the Repository
+
+To clone the repository to your local machine, proceed as follows:
+
+- Visit the [Plant Disease Classification](https://mildew-detector-app-84798b6ec62b.herokuapp.com/) repository.
+- Click the green '<> Code' button and select your preferred cloning option from the list. Copy the provided link.
+- Open your terminal and navigate to the directory where you want to store the cloned repository.
+- Execute the command 'git clone' followed by the URL you copied earlier.
+- Press 'Enter' to create a local clone of the repository.
 
 
-## Main Data Analysis and Machine Learning Libraries
-* Here you should list the libraries you used in the project and provide an example(s) of how you used these libraries.
+## Languages and Libraries
+
+### Languages Used
+
+- Python
+
+### Frameworks, Libraries & Programs Used
+
+- [GitHub](https://github.com/): GitHub served as our primary platform for version control, allowing us to collaboratively manage code changes and adopt agile methodology practices. It facilitated seamless collaboration among team members by providing features such as issue tracking, pull requests, and project boards.
+
+- [Gitpod](https://gitpod.io/): Gitpod was the chosen workspace environment for our project. It offered a cloud-based integrated development environment (IDE) that allowed developers to easily spin up pre-configured development environments directly from GitHub repositories. This enabled team members to have consistent development setups and reduced the overhead of setting up individual development environments.
+
+- [Kaggle](https://www.kaggle.com/): Kaggle served as the primary source of our dataset. Kaggle is a popular platform for data science and machine learning competitions, as well as a repository of datasets. Leveraging Kaggle allowed us to access high-quality datasets, explore community-contributed datasets, and participate in competitions to benchmark our models against others in the field.
+
+- [Jupyter Notebook](https://jupyter.org/): Jupyter Notebook was utilized to execute our machine learning pipeline. Jupyter Notebook is an open-source web application that allows users to create and share documents containing live code, equations, visualizations, and narrative text. It provided an interactive computing environment that facilitated iterative development and experimentation with our machine learning models.
+
+- [Joblib](https://joblib.readthedocs.io/en/latest/): Joblib was employed for saving and loading image shapes within our project. Joblib is a library in Python that provides utilities for saving and loading Python objects to/from disk efficiently. In our context, it helped streamline the process of persisting image shapes, allowing us to cache results and avoid redundant computations during our workflow.
+
+- [NumPy](https://numpy.org/): NumPy was used for converting images into arrays. NumPy is a fundamental package for scientific computing in Python, providing support for multidimensional arrays, matrices, and high-level mathematical functions. It played a crucial role in preprocessing our image data, converting raw image data into numerical arrays that could be fed into our machine learning models.
+
+- [Pandas](https://pandas.pydata.org/): Pandas was instrumental for data analysis and manipulation tasks within our project. Pandas is a powerful data manipulation and analysis library for Python, offering data structures and operations for manipulating numerical tables and time series data. It facilitated tasks such as data cleaning, transformation, and exploration, enabling us to gain insights from our dataset effectively.
+
+- [Matplotlib](https://matplotlib.org/): Matplotlib was utilized for creating charts and plots to visualize our data. Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python. It provided us with a wide range of plotting functionalities, allowing us to generate various types of charts and plots to explore patterns and trends within our dataset.
+
+- [Seaborn](https://seaborn.pydata.org/): Seaborn was employed for data visualization, complementing Matplotlib with additional high-level interfaces for drawing attractive and informative statistical graphics. Seaborn builds on top of Matplotlib and integrates seamlessly with Pandas data structures, making it easy to generate complex visualizations with concise code syntax.
+
+- [Plotly](https://plotly.com/): Plotly was another tool utilized for creating interactive charts and plots in our project. Plotly is a versatile graphing library that supports a wide range of chart types and provides interactivity features such as hover tooltips, zooming, and panning. Its integration with Jupyter Notebook allowed us to create interactive visualizations directly within our notebooks.
+
+- [Streamlit](https://streamlit.io/): Streamlit was used to create the dashboard for our project. Streamlit is an open-source app framework for building and sharing data-driven web applications quickly. It provided a simple and intuitive way to convert Python scripts into interactive web apps, enabling us to deploy our machine learning models and visualizations with minimal effort.
+
+- [Scikit-learn](https://scikit-learn.org/stable/): Scikit-learn served as a cornerstone machine learning library within our project. Scikit-learn is a powerful and easy-to-use library for machine learning in Python, offering tools for data preprocessing, feature extraction, model selection, and evaluation. It provided a consistent interface for implementing various machine learning algorithms and pipelines, facilitating the development and evaluation of predictive models.
+
+- [Tensorflow](https://www.tensorflow.org/): Tensorflow was another key machine learning library utilized in our project. Tensorflow is an open-source deep learning framework developed by Google, offering comprehensive support for building and deploying machine learning models at scale. It provided low-level APIs for neural network development as well as high-level APIs through its Keras interface, enabling us to build and train complex neural network architectures efficiently.
+
+- [Keras](https://keras.io/): Keras was used as a high-level API for building neural networks within our project. Keras is a user-friendly interface for neural network development, providing a simple and intuitive way to design and train deep learning models. It abstracts away the complexities of low-level neural network implementation, allowing us to focus on model architecture and experimentation.
+
+- [Heroku](https://dashboard.heroku.com/login): Heroku was utilized to deploy the web application for our project. Heroku is a cloud platform that enables developers to build, deploy, and scale applications quickly and efficiently. It provided a seamless deployment process, allowing us to deploy our Streamlit dashboard and associated machine learning models with minimal configuration and management overhead.
 
 
 ## Credits 
@@ -467,17 +534,22 @@ There are no known unfixed bugs.
 
 ### Content 
 
-- The text for the Home page was taken from Wikipedia Article A
-- Instructions on how to implement form validation on the Sign-Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
+- Code Institute [Malaria Detector](https://github.com/Code-Institute-Solutions/WalkthroughProject01) project was used extensively as a reference when creating this project.
+- Other than that, the lesson material on Tensorflow and image analysis was referenced throughout the project. 
+- The readme template was taken from [Mildew Detection Project](https://github.com/hashtag-squirrel/mildew-detection-project/blob/main/README.md) [Mildew Detection in Cherry Leaves](https://github.com/Porsil/mildew_detection_in_cherry_leaves/blob/main/README.md). 
+- Dataset was taken from [Plant disease recognition dataset](https://www.kaggle.com/datasets/codeinstitute/cherry-leaves).
+- CRISP-DM diagram taken from [Research Gate](https://www.researchgate.net/figure/CRISP-DM-data-mining-framework_fig1_341627969).
+- Youtube channel [Fanilo Andrianasolo](https://www.youtube.com/@andfanilo) was used for customization of the Streamlit app.
+- All what I have learned about of the powdery mildew and I have used to do this project was taken from [Garden Tech webpage](https://www.gardentech.com).
 
 ### Media
-
-- The photos used on the home and sign-up page are from This Open-Source site
-- The images used for the gallery page were taken from this other open-source site
-
+- Background images were taken from [Vecteezy](https://vecteezy.com/).
+- The images used for testing were taken from this other open-source site
 
 
-## Acknowledgements (optional)
-* Thank the people that provided support through this project.
 
+## Acknowledgements 
+
+My mentor **Precious Ijege** for support and guidance.
+
+Code Institute slack community
