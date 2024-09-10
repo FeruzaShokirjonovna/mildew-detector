@@ -76,7 +76,7 @@ def mildew_detector_body():
 
     st.write("---")
     # The file uploader is shown with three extensions allowed, png, jpg and jpeg.
-    images_buffer = st.file_uploader('Upload leaves images samples. You may select more than one.',
+    images_buffer = st.file_uploader('Upload a clear picture of a cherry leaf for live predictions. You may select more than one.',
                                         type=['png','jpg','jpeg'],accept_multiple_files=True)
 
     # if the user load at least one image, we can analyze the image in real time and show them 

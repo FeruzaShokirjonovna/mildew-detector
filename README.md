@@ -332,11 +332,11 @@ The results were 2 correct predictions and 3 incorrect predictions as follows:
 
 | Image Numbers | Classification |
 |---------------|----------------|
-| 1             | Infected        |
+| 1             | Infected       |
 | 2             | Healthy        |
-| 3             | Infected        |
-| 4             | Healthy           |
-| 5             | Infected           |
+| 3             | Infected       |
+| 4             | Healthy        |
+| 5             | Infected       |
 
 This insight will be conveyed to the client to ensure they understand the significance of adhering to the image background requirements for optimal model performance.
 
@@ -413,13 +413,33 @@ In conclusion, this hypothesis was validated as the model inaccurately predicted
 | Plant Detector     |     Suggest treatment     |    Pass     |
 | Plant Detector     |      Analysis report      |    Pass     |
 | Plant Detector     |    Downloadable report    |    Pass     |
-| Project Hypothesis   |          Content          |    Pass     |
+| Project Hypothesis |          Content          |    Pass     |
 | Machine Learning Performance  |          Content          |    Pass     |
 
 </details>
 
-## Unfixed Bugs
-* You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
+## Bugs
+
+### Fixed Bugs
+<details>
+
+<summary>Gitpod & Github</summary>
+
+Firstly, the default python version on gitpod is 3.8.18 and most of the packages in requirements.txt file could not be installed using this python version. To solve the issue, set runtime.txt to python-3.8.10.
+
+</details>
+
+<details>
+
+<summary>Misplacing evaluation.pkl</summary>
+
+The Streamlit app encountered an issue where the developer misplaced evaluation.pkl. The issue was easily solved by checking relative code and relocating.
+
+</details>
+
+### Unfixed Bugs
+
+There are no known unfixed bugs.
 
 ## Deployment
 ### Heroku
