@@ -338,6 +338,85 @@ The results were 2 correct predictions and 3 incorrect predictions as follows:
 | 4             | Healthy           |
 | 5             | Infected           |
 
+This insight will be conveyed to the client to ensure they understand the significance of adhering to the image background requirements for optimal model performance.
+
+In conclusion, this hypothesis was validated as the model inaccurately predicted the classification of 2 out of 5 images.
+
+## Testing
+
+<details>
+
+<summary>User Story Testing</summary>
+
+**Business Requirement 1: Data Visualization**
+
+1. **Interactive Dashboard Navigation:**
+   - **User Story:** Client needs easy navigation within the interactive dashboard for effective data comprehension.
+   - **Test Scenario:**
+     | Feature           | Action                           | Expected Outcome                         | Actual Outcome |
+     | ----------------- | -------------------------------- | ---------------------------------------- | -------------- |
+     | Navigation bar    | Clicking on side menu buttons    | Correct display of selected page content | Functions as intended |
+
+2. **Plant Image Visualizer Page:**
+   - **User Story:** Clients require visual representation of average images, image disparities, and variations between healthy and diseased cherry leaves for quick identification.
+   - **Test Scenarios:**
+     | Feature                                | Action                            | Expected Outcome                      | Actual Outcome |
+     | -------------------------------------- | --------------------------------- | ------------------------------------- | -------------- |
+     | Checkbox for average and variability images | Checking the checkbox          | Rendering of relevant image plots     | Functions as intended |
+     | Checkbox for difference between average images | Checking the checkbox       | Rendering of relevant image plots     | Functions as intended |
+     | Checkbox for image montage            | Checking the checkbox           | Display of label selection dropdown and "Create montage" button | Functions as intended |
+     | Image montage creation button         | Clicking 'Create Montage' button after label selection | Display of relevant image montage with correct label | Functions as intended |
+
+**Business Requirement 2 and 3: Classification and Providing recommendations**
+
+1. **Plant Disease Detector Page:**
+   - **User Story:** Clients aim to upload cherry leaf images to utilize the ML model for immediate and accurate disease prediction.
+   - **Test Scenario:**
+     | Feature            | Action                                          | Expected Outcome                            | Actual Outcome |
+     | ------------------ | ----------------------------------------------- | ------------------------------------------- | -------------- |
+     | File uploader      | Uploading image data via 'Browse files' button | Display of disease prediction with probabilities and suggest treatments | Functions as intended |
+
+2. **Saving Model Predictions:**
+   - **User Story:** Clients need to save model predictions in a CSV file.
+   - **Test Scenario:**
+     | Feature                  | Action                                          | Expected Outcome                            | Actual Outcome |
+     | ------------------------ | ----------------------------------------------- | ------------------------------------------- | -------------- |
+     | Download Report link     | Clicking on 'Download Analysis Report as CSV' link | Saving of a CSV file              | Functions as intended |
+
+</details>
+
+<details>
+
+<summary>Dashboard Testing</summary>
+
+| Page         |          Feature          | Pass / Fail |
+| ------------ | :-----------------------: | :---------: |
+| Quick Project Summary |          Content          |    Pass     |
+| Quick Project Summary |         Nav link          |    Pass     |
+| Quick Project Summary |        ReadMe link        |    Pass     |
+| Plant Visualizer   |          Content          |    Pass     |
+| Plant Visualizer   |    1st checkbox ticked    |    Pass     |
+| Plant Visualizer   |   1st checkbox unticked   |    Pass     |
+| Plant Visualizer   |    2nd checkbox ticked    |    Pass     |
+| Plant Visualizer   |   2nd checkbox unticked   |    Pass     |
+| Plant Visualizer   |    3rd checkbox ticked    |    Pass     |
+| Plant Visualizer   |   3rd checkbox unticked   |    Pass     |
+| Plant Visualizer   |      Healthy montage      |    Pass     |
+| Plant Visualiser   |  Powdery Infected montage |    Pass     |
+| Plant Detector     |          Content          |    Pass     |
+| Plant Detector     |        Kaggle link        |    Pass     |
+| Plant Detector     |       Dropdown menu       |    Pass     |
+| Plant Detector     |    Browse file upload     |    Pass     |
+| Plant Detector     |   Show uploaded images    |    Pass     |
+| Plant Detector     |     Show predictions      |    Pass     |
+| Plant Detector     |  Show probability graph   |    Pass     |
+| Plant Detector     |     Suggest treatment     |    Pass     |
+| Plant Detector     |      Analysis report      |    Pass     |
+| Plant Detector     |    Downloadable report    |    Pass     |
+| Project Hypothesis   |          Content          |    Pass     |
+| Machine Learning Performance  |          Content          |    Pass     |
+
+</details>
 
 ## Unfixed Bugs
 * You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
